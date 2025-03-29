@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  nginx:
+    container_name: kodex_nginx
+    image: nginx:latest
+    ports:
+      - "${HTTP_PORT:-80}:80"
+    volumes:
+      - ./:/var/www
+      - ./_docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./_docker/nginx/log:/var/log/nginx
+    working_dir: /var/www
+    restart: unless-stopped
+    networks:
+      - kodex_network
+  app:
+    container_name: kodex_app
+    build:
+      context: ./_docker/php
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/var/www
+    restart: unless-stopped
+    networks:
+      - kodex_network
+  mysql:
+    container_name: kodex_mysql
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE:-kodex}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    restart: unless-stopped
+    networks:
+      - kodex_network
+  phpmyadmin:
+    container_name: kodex_phpmyadmin
+    image: phpmyadmin
+    ports:
+      - "33060:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    depends_on:
+      - mysql
+    restart: unless-stopped
+    networks:
+      - kodex_network
+
+volumes:
+  mysql_data:
+    name: volume_kodex_mysql_data
+
+networks:
+  kodex_network:
+    driver: bridge
