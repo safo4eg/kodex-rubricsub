@@ -5,6 +5,7 @@ namespace App\Http\Requests\Api;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Validator;
+use Laravel\Passport\Client;
 
 class RegisterRequest extends FormRequest
 {
@@ -37,7 +38,14 @@ class RegisterRequest extends FormRequest
         return [
             function (Validator $validator) {
                 if($this->filled('client_id') && $this->filled('client_secret')) {
-                    $validator->errors()->add('client_id', 'Неверный client_id и/ИЛИ client_secret');
+                    $client = Client::where('id', $this->input('client_id'))
+                        ->where('secret', $this->input('client_secret'))
+                        ->first();
+
+                    if(!$client) {
+                        $validator->errors()->add('client_id', 'Неверный client_id и/ИЛИ client_secret');
+                    }
+
                 }
             }
         ];
