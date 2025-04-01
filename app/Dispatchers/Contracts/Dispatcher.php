@@ -46,7 +46,7 @@ abstract class Dispatcher
             $previousVersion = null;
             foreach ($availableVersions as $version) {
                 if(version_compare($version, $apiVersion) === -1) {
-                    $apiVersion = $version;
+                    $previousVersion = $version;
                     break;
                 }
             }
@@ -56,7 +56,7 @@ abstract class Dispatcher
                 throw new \Exception('API version ' . $apiVersion . ' is not supported method');
             }
 
-            $controllerInstance = app($this->versions[$apiVersion]['controller']);;
+            $controllerInstance = app($this->versions[$previousVersion]['controller']);;
         }
 
         return ResponseHelper::getResponse(...call_user_func([$controllerInstance, $method], $request, ...$args));
