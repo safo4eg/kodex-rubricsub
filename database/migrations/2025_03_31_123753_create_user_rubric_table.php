@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('rubric_id')
                 ->constrained('rubrics')
                 ->onDelete('cascade');
-            $table->timestamp('created_at');
+            $table->timestamp('created_at')->default(now());
         });
     }
 
