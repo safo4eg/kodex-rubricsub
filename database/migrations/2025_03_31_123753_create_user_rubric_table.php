@@ -19,6 +19,8 @@ return new class extends Migration
                 ->constrained('rubrics')
                 ->onDelete('cascade');
             $table->timestamp('created_at')->default(now());
+
+            $table->primary(['user_id', 'rubric_id']);
         });
     }
 
