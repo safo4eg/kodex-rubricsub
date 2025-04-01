@@ -58,6 +58,6 @@ abstract class Dispatcher
             $controllerInstance = app($this->versions[$apiVersion]['controller']);;
         }
 
-        return App::call([$controllerInstance, $method]);
+        return call_user_func([$controllerInstance, $method], $request, ...$args);
     }
 }

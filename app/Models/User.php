@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
@@ -45,5 +46,18 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function rubrics(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            related: Rubric::class,
+            table: 'user_rubric',
+            foreignPivotKey: 'user_id',
+            relatedPivotKey: 'rubric_id',
+        )
+            ->as('user')
+            ->with('created_at')
+            ->using(UserRubric::class);
     }
 }

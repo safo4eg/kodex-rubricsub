@@ -7,6 +7,7 @@ use App\Models\Rubric;
 use App\Models\User;
 use App\Services\API\V1\UserRubricService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class UserRubricController extends Controller
 {
@@ -30,7 +31,7 @@ class UserRubricController extends Controller
      */
     public function store(Request $request, User $user, Rubric $rubric)
     {
-//        $this->userRubricService->store($user, $rubric);
+        $this->userRubricService->store($user, $rubric);
         return response()->json(['test' => 'da'], 201);
     }
 

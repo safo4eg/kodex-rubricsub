@@ -20,7 +20,6 @@
         'controller' => 'App\\Http\\Controllers\\API\\V2\\UserRubricController',
         'unsupported_methods' => 
         array (
-          0 => 'store',
         ),
       ),
     ),

@@ -10,6 +10,14 @@ use Illuminate\Http\Request;
 class UserRubricDispatcher extends Dispatcher
 {
 
+    /**
+     * Вызов создания подписки
+     * @param Request $request
+     * @param User $user
+     * @param Rubric $rubric
+     * @return mixed
+     * @throws \Exception
+     */
     public function store(Request $request, User $user, Rubric $rubric): mixed
     {
         return $this->run('store', $request, $user, $rubric);
