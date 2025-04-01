@@ -25,7 +25,7 @@ abstract class Dispatcher
         }
 
         // если версии не существует
-        if(!in_array($apiVersion, $this->versions)) {
+        if(!array_key_exists($apiVersion, $this->versions)) {
             throw new \Exception('API Version ' . $apiVersion . ' is not supported');
         }
 
