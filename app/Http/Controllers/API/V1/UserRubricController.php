@@ -5,9 +5,11 @@ namespace App\Http\Controllers\API\V1;
 use App\Http\Controllers\Controller;
 use App\Models\Rubric;
 use App\Models\User;
+use App\Models\UserRubric;
 use App\Services\API\V1\UserRubricService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Gate;
 
 class UserRubricController extends Controller
 {
@@ -16,14 +18,7 @@ class UserRubricController extends Controller
     public function __construct(UserRubricService $userRubricService)
     {
         $this->userRubricService = $userRubricService;
-    }
-
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
+//        $this->authorizeResource
     }
 
     /**
@@ -31,8 +26,16 @@ class UserRubricController extends Controller
      */
     public function store(Request $request, User $user, Rubric $rubric)
     {
+        Gate::authorize('store', [UserRubric::class, $user, $rubric]);
         $this->userRubricService->store($user, $rubric);
-        return response()->json(['test' => 'da'], 201);
+        return response()->json([
+            'success' => true,
+            'data' => [
+                'user_id' => $user->id,
+                'rubric_id' => $rubric->id
+            ],
+            'message' => 'Подписка успешно добавлена'
+        ], 201);
     }
 
     /**
