@@ -6,6 +6,14 @@ use Spatie\ArrayToXml\ArrayToXml;
 
 class ResponseHelper
 {
+
+    /**
+     * Формирует ответ в нужном формате application/json || application/xml
+     * - так же по дефолту возвращает text/plain
+     * @param array $data
+     * @param int $status
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Foundation\Application|\Illuminate\Http\JsonResponse|\Illuminate\Http\Response|object
+     */
     public static function getResponse(array $data, int $status)
     {
         if(request()->wantsJson()) {
