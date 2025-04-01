@@ -42,7 +42,7 @@ class UserRubricController extends Controller
             'message' => 'Подписка успешно добавлена'
         ];
 
-        return ResponseHelper::getResponse($data, 201);
+        return [$data, 201];
     }
 
     /**

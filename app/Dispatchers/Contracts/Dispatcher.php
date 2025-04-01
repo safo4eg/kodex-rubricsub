@@ -2,6 +2,7 @@
 
 namespace App\Dispatchers\Contracts;
 
+use App\Helpers\ResponseHelper;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Log;
@@ -58,6 +59,6 @@ abstract class Dispatcher
             $controllerInstance = app($this->versions[$apiVersion]['controller']);;
         }
 
-        return call_user_func([$controllerInstance, $method], $request, ...$args);
+        return ResponseHelper::getResponse(...call_user_func([$controllerInstance, $method], $request, ...$args));
     }
 }
