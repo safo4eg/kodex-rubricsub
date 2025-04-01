@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API\V1;
+namespace App\Http\Controllers\API\V2;
 
 use App\Http\Controllers\Controller;
 use App\Models\Rubric;
@@ -26,12 +26,12 @@ class UserRubricController extends Controller
     }
 
     /**
-     * Подписать пользователя на рубрику
+     * Подпись пользователя на рубрику
      */
     public function store(Request $request, User $user, Rubric $rubric)
     {
-//        $this->userRubricService->store($user, $rubric);
-        return response()->json(['test' => 'da'], 201);
+        $this->userRubricService->store($user, $rubric);
+        return response()->json([], 201);
     }
 
     /**

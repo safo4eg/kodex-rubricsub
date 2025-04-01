@@ -1,0 +1,23 @@
+<?php
+use \App\Http\Controllers\API\V1;
+use \App\Http\Controllers\API\V2;
+
+/**
+ * Сопостовление версий с кнотроллерами
+ * Если метод возвращает true он будет вызван, НО
+ * - если метода нет в контроллере версии, вызовется метод предыдущей версии
+ * - если метод = false, значит в текущей версии он не поддерживается
+ */
+
+return [
+    \App\Dispatchers\UserRubricDispatcher::class => [
+        'v1' => [
+            'controller' => V1\UserRubricController::class,
+            'unsupported_methods' => []
+        ],
+        'v2' => [
+            'controller' => V2\UserRubricController::class,
+            'unsupported_methods' => []
+        ]
+    ]
+];

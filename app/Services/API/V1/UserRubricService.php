@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\API\V1;
 use App\Models\Rubric;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;

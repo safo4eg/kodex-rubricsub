@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Requests\Api;
+namespace App\Http\Requests\Api\V1;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Validator;
 use Laravel\Passport\Client;
 
