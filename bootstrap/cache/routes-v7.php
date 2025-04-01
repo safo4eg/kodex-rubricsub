@@ -234,7 +234,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::u7Fc4anHDHDwDBNR',
+            '_route' => 'generated::Q6DrAsCE4vTq1KIm',
           ),
           1 => NULL,
           2 => 
@@ -254,7 +254,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::D3n6ayMkIElfmQjo',
+            '_route' => 'generated::zc60KR0Fb2rQKAvt',
           ),
           1 => NULL,
           2 => 
@@ -271,7 +271,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/oauth/(?|tokens/([^/]++)(*:32)|clients/([^/]++)(?|(*:58))|personal\\-access\\-tokens/([^/]++)(*:99))|/api/users/([^/]++)/rubrics/([^/]++)(*:143)|/storage/(.*)(*:164))/?$}sDu',
+      0 => '{^(?|/oauth/(?|tokens/([^/]++)(*:32)|clients/([^/]++)(?|(*:58))|personal\\-access\\-tokens/([^/]++)(*:99))|/api/users/([^/]++)/rubrics/([^/]++)(?|(*:146))|/storage/(.*)(*:168))/?$}sDu',
     ),
     3 => 
     array (
@@ -360,7 +360,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      143 => 
+      146 => 
       array (
         0 => 
         array (
@@ -382,8 +382,28 @@ app('router')->setCompiledRoutes(
           5 => true,
           6 => NULL,
         ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'users.rubrics.generated::XSsVwjw7TUp6VNwQ',
+          ),
+          1 => 
+          array (
+            0 => 'user',
+            1 => 'rubric',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
       ),
-      164 => 
+      168 => 
       array (
         0 => 
         array (
@@ -1046,7 +1066,44 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::u7Fc4anHDHDwDBNR' => 
+    'users.rubrics.generated::XSsVwjw7TUp6VNwQ' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'api/users/{user}/rubrics/{rubric}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+          1 => 'auth:api',
+        ),
+        'uses' => 'App\\Dispatchers\\UserRubricDispatcher@destroy',
+        'controller' => 'App\\Dispatchers\\UserRubricDispatcher@destroy',
+        'as' => 'users.rubrics.generated::XSsVwjw7TUp6VNwQ',
+        'namespace' => NULL,
+        'prefix' => 'api',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::Q6DrAsCE4vTq1KIm' => 
     array (
       'methods' => 
       array (
@@ -1075,7 +1132,7 @@ app('router')->setCompiledRoutes(
                         \'exception\' => $exception,
                     ]), status: $exception ? 500 : 200);
                 }";s:5:"scope";s:54:"Illuminate\\Foundation\\Configuration\\ApplicationBuilder";s:4:"this";N;s:4:"self";s:32:"00000000000004f10000000000000000";}}',
-        'as' => 'generated::u7Fc4anHDHDwDBNR',
+        'as' => 'generated::Q6DrAsCE4vTq1KIm',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1091,7 +1148,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::D3n6ayMkIElfmQjo' => 
+    'generated::zc60KR0Fb2rQKAvt' => 
     array (
       'methods' => 
       array (
@@ -1113,7 +1170,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::D3n6ayMkIElfmQjo',
+        'as' => 'generated::zc60KR0Fb2rQKAvt',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1145,7 +1202,7 @@ app('router')->setCompiledRoutes(
                         $config,
                         $isProduction
                     ))($request, $path);
-                }";s:5:"scope";s:47:"Illuminate\\Filesystem\\FilesystemServiceProvider";s:4:"this";N;s:4:"self";s:32:"00000000000004f90000000000000000";}}',
+                }";s:5:"scope";s:47:"Illuminate\\Filesystem\\FilesystemServiceProvider";s:4:"this";N;s:4:"self";s:32:"00000000000004fa0000000000000000";}}',
         'as' => 'storage.local',
       ),
       'fallback' => false,

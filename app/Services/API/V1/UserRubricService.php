@@ -23,4 +23,18 @@ class UserRubricService
             throw $e;
         }
     }
+
+    public function destroy(User $user, Rubric $rubric): void
+    {
+        DB::beginTransaction();
+        try {
+            UserRubric::where('user_id', $user->id)
+                ->where('rubric_id', $rubric->id)
+                ->delete();
+            DB::commit();
+        } catch (\Throwable $e) {
+            DB::rollBack();
+            throw $e;
+        }
+    }
 }

@@ -21,5 +21,16 @@ class UserRubricPolicy
             ? Response::allow()
             : Response::deny('Невозможно сделать подписку за другого пользователя.');
     }
+
+    public function destroy(
+        User $authUser,
+        User $forUser,
+        Rubric $rubric
+    ): Response
+    {
+        return $authUser->id === $forUser->id
+            ? Response::allow()
+            : Response::deny('Невозможно удалить подписку другому пользователю');
+    }
 }
 

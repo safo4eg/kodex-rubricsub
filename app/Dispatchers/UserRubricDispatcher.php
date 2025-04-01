@@ -22,4 +22,9 @@ class UserRubricDispatcher extends Dispatcher
     {
         return $this->run('store', $request, $user, $rubric);
     }
+
+    public function destroy(Request $request, User $user, Rubric $rubric): mixed
+    {
+        return $this->run('destroy', $request, $user, $rubric);
+    }
 }

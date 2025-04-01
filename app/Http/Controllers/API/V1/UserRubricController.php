@@ -38,28 +38,18 @@ class UserRubricController extends Controller
         return [$responseData, 201];
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function destroy(Request $request, User $user, Rubric $rubric)
     {
-        //
-    }
+        Gate::authorize('destroy', [UserRubric::class, $user, $rubric]);
+        $this->userRubricService->destroy($user, $rubric);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+        $responseData = [
+            'success' => true,
+            'data' => [],
+            'message' => "Подписка успешно удалена"
+        ];
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return [$responseData, 200];
     }
 
     /**
