@@ -9,11 +9,14 @@ use Illuminate\Support\Facades\Log;
 
 class UserRubricService
 {
-    public function store(User $user, Rubric $rubric): void
+    public function store(User $user, Rubric $rubric): UserRubric
     {
         DB::beginTransaction();
         try {
-            $user->rubrics()->attach($rubric->id);
+            return UserRubric::createAndSave(
+                userId: $user->id,
+                rubricId: $rubric->id
+            );
             DB::commit();
         } catch (\Throwable $e) {
             DB::rollBack();

@@ -12,4 +12,13 @@ class UserRubric extends Pivot
     protected $primaryKey = false;
     protected $guarded = [];
 
+    public static function createAndSave(int $userId, int $rubricId): static
+    {
+        $instance = new static();
+        $instance->user_id = $userId;
+        $instance->rubric_id = $rubricId;
+        $instance->created_at = now();
+        $instance->save();
+        return $instance;
+    }
 }

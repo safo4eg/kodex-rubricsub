@@ -2,18 +2,14 @@
 
 namespace App\Http\Controllers\API\V1;
 
-use App\Helpers\ResponseHelper;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserRubricResource;
 use App\Models\Rubric;
 use App\Models\User;
 use App\Models\UserRubric;
 use App\Services\API\V1\UserRubricService;
-use Generator;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Gate;
-use SimpleXMLElement;
-use Spatie\ArrayToXml\ArrayToXml;
 
 class UserRubricController extends Controller
 {
@@ -31,18 +27,15 @@ class UserRubricController extends Controller
     public function store(Request $request, User $user, Rubric $rubric)
     {
         Gate::authorize('store', [UserRubric::class, $user, $rubric]);
-        $this->userRubricService->store($user, $rubric);
+        $userRubric = $this->userRubricService->store($user, $rubric);
 
-        $data = [
+        $responseData = [
             'success' => true,
-            'data' => [
-                'user_id' => $user->id,
-                'rubric_id' => $rubric->id
-            ],
-            'message' => 'Подписка успешно добавлена'
+            'data' => (new UserRubricResource($userRubric))->toArray($request),
+            'message' => "Подписка успешно добавлена"
         ];
 
-        return [$data, 201];
+        return [$responseData, 201];
     }
 
     /**
