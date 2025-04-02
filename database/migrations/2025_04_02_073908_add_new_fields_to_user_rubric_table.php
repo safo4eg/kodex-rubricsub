@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('user_rubric', function (Blueprint $table) {
-            $table->uuid()->unique();
+            $table->uuid()->unique()->nullable();
         });
     }
 

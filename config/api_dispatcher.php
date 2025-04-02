@@ -27,7 +27,7 @@ return [
             'unsupported_methods' => [],
         ],
         'v2' => [
-            'controller' => V2\UserController::class,
+            'controller' => null,
             'unsupported_methods' => [],
         ]
     ],
