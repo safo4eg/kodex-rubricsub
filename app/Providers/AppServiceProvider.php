@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Passport\Passport;
@@ -14,18 +15,23 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        foreach (glob(app_path('Filters') . '/*Filter.php') as $filename) {
-            $namespace = 'App\\Filters\\' . basename($filename, '.php');
-            $reflection = new \ReflectionClass($namespace);
+        $versions = ['v1', 'v2'];
 
-            if($reflection->isAbstract()) continue;
-            if($reflection->isInterface()) continue;
-            if($reflection->isTrait()) continue;
+        foreach ($versions as $version) {
+            $pathToFilters = app_path('Filters/Api/' . strtoupper($version));
+            foreach (glob($pathToFilters . '/*Filter.php') as $filename) {
+                $namespace = 'App\\Filters\\Api\\' . strtoupper($version) . '\\' . basename($filename, '.php');
+                $reflection = new \ReflectionClass($namespace);
 
-            $this->app->bind(
-                abstract: $namespace,
-                concrete: fn(Application $application) => new $namespace(request()->query->all())
-            );
+                if($reflection->isAbstract()) continue;
+                if($reflection->isInterface()) continue;
+                if($reflection->isTrait()) continue;
+
+                $this->app->bind(
+                    abstract: $namespace,
+                    concrete: fn(Application $application) => new $namespace(request()->query->all())
+                );
+            }
         }
     }
 
