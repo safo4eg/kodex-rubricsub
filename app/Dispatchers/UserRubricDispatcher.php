@@ -27,4 +27,9 @@ class UserRubricDispatcher extends Dispatcher
     {
         return $this->run('destroy', $request, $user, $rubric);
     }
+
+    public function destroyAll(Request $request, User $user): mixed
+    {
+        return $this->run('destroyAll', $request, $user);
+    }
 }

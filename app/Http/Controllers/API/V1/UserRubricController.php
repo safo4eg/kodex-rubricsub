@@ -18,7 +18,6 @@ class UserRubricController extends Controller
     public function __construct(UserRubricService $userRubricService)
     {
         $this->userRubricService = $userRubricService;
-//        $this->authorizeResource
     }
 
     /**
@@ -55,8 +54,17 @@ class UserRubricController extends Controller
     /**
      * Удаление всех рубрик
      */
-    public function destroyAll(string $id)
+    public function destroyAll(Request $request, User $user)
     {
-        //
+        Gate::authorize('destroyAll', [UserRubric::class, $user]);
+        $this->userRubricService->destroyAll($user);
+
+        $responseData = [
+            'success' => true,
+            'data' => [],
+            'message' => "Подписки успешно удалены"
+        ];
+
+        return [$responseData, 200];
     }
 }

@@ -32,5 +32,15 @@ class UserRubricPolicy
             ? Response::allow()
             : Response::deny('Невозможно удалить подписку другому пользователю');
     }
+
+    public function destroyAll(
+        User $authUser,
+        User $forUser,
+    ): Response
+    {
+        return $authUser->id === $forUser->id
+            ? Response::allow()
+            : Response::deny('Невозможно удалить подписки другому пользователю');
+    }
 }
 

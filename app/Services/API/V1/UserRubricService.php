@@ -37,4 +37,16 @@ class UserRubricService
             throw $e;
         }
     }
+
+    public function destroyAll(User $user): void
+    {
+        DB::beginTransaction();
+        try {
+            $user->rubrics()->detach();
+            DB::commit();
+        } catch (\Throwable $e) {
+            DB::rollBack();
+            throw $e;
+        }
+    }
 }
