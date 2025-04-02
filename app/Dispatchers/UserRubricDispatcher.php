@@ -23,11 +23,26 @@ class UserRubricDispatcher extends Dispatcher
         return $this->run('store', $request, $user, $rubric);
     }
 
+    /**
+     * Удаление подписки
+     * @param Request $request
+     * @param User $user
+     * @param Rubric $rubric
+     * @return mixed
+     * @throws \Exception
+     */
     public function destroy(Request $request, User $user, Rubric $rubric): mixed
     {
         return $this->run('destroy', $request, $user, $rubric);
     }
 
+    /**
+     * Удаление всех подписок пользователя
+     * @param Request $request
+     * @param User $user
+     * @return mixed
+     * @throws \Exception
+     */
     public function destroyAll(Request $request, User $user): mixed
     {
         return $this->run('destroyAll', $request, $user);
