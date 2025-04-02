@@ -4,12 +4,11 @@ namespace App\Http\Controllers\Api\V2;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\V2\StoreUserRubricRequest;
-use App\Http\Resources\UserRubricResource;
+use App\Http\Resources\Api\V2\UserRubricResource;
 use App\Models\Rubric;
 use App\Models\User;
 use App\Models\UserRubric;
 use App\Services\Api\V2\UserRubricService;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
 class UserRubricController extends Controller

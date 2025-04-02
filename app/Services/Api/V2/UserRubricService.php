@@ -5,6 +5,7 @@ use App\Models\Rubric;
 use App\Models\User;
 use App\Models\UserRubric;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class UserRubricService
 {
@@ -14,7 +15,8 @@ class UserRubricService
         try {
             $userRubric = UserRubric::createAndSave(
                 userId: $user->id,
-                rubricId: $rubric->id
+                rubricId: $rubric->id,
+                uuid: Str::uuid()
             );
             DB::commit();
 

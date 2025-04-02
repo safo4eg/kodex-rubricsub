@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\Api\V2;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -17,7 +17,8 @@ class UserRubricResource extends JsonResource
         return [
             'user_id' => $this->user_id,
             'rubric_id' => $this->rubric_id,
-            'created_at' => $this->created_at
+            'created_at' => $this->created_at,
+            'uuid' => $this->uuid
         ];
     }
 }
