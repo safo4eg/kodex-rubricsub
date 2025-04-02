@@ -15,6 +15,6 @@ Route::middleware('auth:api')->group(function () {
         Route::post('/users/{user}/rubrics/{rubric}', [UserRubricDispatcher::class, 'store']);
         Route::delete('/users/{user}/rubrics/{rubric}', [UserRubricDispatcher::class, 'destroy']);
         Route::delete('/users/{user}/rubrics', [UserRubricDispatcher::class, 'destroyAll']);
-
+        Route::get('/users/{user}/rubrics', [UserRubricDispatcher::class, 'index']);
     });
 });

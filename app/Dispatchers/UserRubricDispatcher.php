@@ -9,6 +9,17 @@ use Illuminate\Http\Request;
 
 class UserRubricDispatcher extends Dispatcher
 {
+    /**
+     * Отображение подписок пользователя
+     * @param Request $request
+     * @param User $user
+     * @return mixed
+     * @throws \Exception
+     */
+    public function index(Request $request, User $user): mixed
+    {
+        return $this->run('index', $request, $user);
+    }
 
     /**
      * Вызов создания подписки

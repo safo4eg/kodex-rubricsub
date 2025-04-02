@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API\V1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\RubricResource;
 use App\Http\Resources\UserRubricResource;
 use App\Models\Rubric;
 use App\Models\User;
@@ -18,6 +19,26 @@ class UserRubricController extends Controller
     public function __construct(UserRubricService $userRubricService)
     {
         $this->userRubricService = $userRubricService;
+    }
+
+    /**
+     * Показать подписки пользователя
+     * @param Request $request
+     * @param User $user
+     * @return void
+     * @throws \Throwable
+     */
+    public function index(Request $request, User $user)
+    {
+        $rubrics = $user->rubrics()->get();
+
+        $responseData = [
+            'success' => true,
+            'data' => RubricResource::collection($rubrics),
+            'message' => ''
+        ];
+
+        return [$responseData, 200];
     }
 
     /**

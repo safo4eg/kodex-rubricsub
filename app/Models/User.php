@@ -56,8 +56,8 @@ class User extends Authenticatable
             foreignPivotKey: 'user_id',
             relatedPivotKey: 'rubric_id',
         )
-            ->as('user')
-            ->with('created_at')
+            ->as('subscribe')
+            ->withPivot('created_at')
             ->using(UserRubric::class);
     }
 }
