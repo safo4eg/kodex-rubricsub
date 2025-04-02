@@ -30,5 +30,17 @@ return [
             'controller' => V2\UserController::class,
             'unsupported_methods' => [],
         ]
+    ],
+
+    \App\Dispatchers\AuthDispatcher::class => [
+        'v1' => [
+            'controller' => V1\AuthController::class,
+            'unsupported_methods' => [],
+        ],
+
+        'v2' => [
+            'controller' => null,
+            'unsupported_methods' => [],
+        ]
     ]
 ];

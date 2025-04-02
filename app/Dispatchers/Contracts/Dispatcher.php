@@ -35,9 +35,16 @@ abstract class Dispatcher
             throw new \Exception('API Version ' . $apiVersion . ' is not supported this method');
         }
 
-        $controllerInstance = app($this->versions[$apiVersion]['controller']);
+        $versionController = $this->versions[$apiVersion]['controller'];
+        $controllerInstance = null;
+
+        if(isset($versionController)) {
+            $controllerInstance = app($versionController);
+        }
+
         // если метод не описан в выбранной версии, пытаемся найти предыдущую версию
-        if (!is_callable([$controllerInstance, $method])) {
+        // или если не указан контроллер (чтобы не плодить пустые контроллеры)
+        if (!isset($versionController) && !is_callable([$controllerInstance, $method])) {
             $availableVersions = array_keys($this->versions);
             usort($availableVersions, function ($a, $b) {
                 return version_compare($b, $a);
