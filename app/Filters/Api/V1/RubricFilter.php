@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filters\V1;
+namespace App\Filters\Api\V1;
 
 use App\Filters\AbstractFilter;
 use App\Filters\FilterMethod;

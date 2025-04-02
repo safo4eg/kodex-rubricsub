@@ -19,5 +19,12 @@ return [
             'controller' => V2\UserRubricController::class,
             'unsupported_methods' => []
         ]
+    ],
+
+    \App\Dispatchers\UserDispatcher::class => [
+        'v1' => [
+            'controller' => V1\UserController::class,
+            'unsupported_methods' => [],
+        ]
     ]
 ];

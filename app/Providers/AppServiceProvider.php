@@ -3,8 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Passport\Passport;
 
