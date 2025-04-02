@@ -13,11 +13,13 @@ class UserRubricService
     {
         DB::beginTransaction();
         try {
-            return UserRubric::createAndSave(
+            $userRubric = UserRubric::createAndSave(
                 userId: $user->id,
                 rubricId: $rubric->id
             );
             DB::commit();
+
+            return $userRubric;
         } catch (\Throwable $e) {
             DB::rollBack();
             throw $e;
