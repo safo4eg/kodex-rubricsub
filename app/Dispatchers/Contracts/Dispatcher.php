@@ -44,7 +44,7 @@ abstract class Dispatcher
 
         // если метод не описан в выбранной версии, пытаемся найти предыдущую версию
         // или если не указан контроллер (чтобы не плодить пустые контроллеры)
-        if (!isset($versionController) && !is_callable([$controllerInstance, $method])) {
+        if (!isset($versionController) || !is_callable([$controllerInstance, $method])) {
             $availableVersions = array_keys($this->versions);
             usort($availableVersions, function ($a, $b) {
                 return version_compare($b, $a);
