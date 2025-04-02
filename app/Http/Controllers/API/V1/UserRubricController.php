@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API\V1;
 
 use App\Filters\RubricFilter;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Api\V1\IndexUserRubricRequest;
 use App\Http\Resources\RubricResource;
 use App\Http\Resources\UserRubricResource;
 use App\Models\Rubric;
@@ -29,7 +30,7 @@ class UserRubricController extends Controller
      * @return void
      * @throws \Throwable
      */
-    public function index(Request $request, User $user, RubricFilter $filter)
+    public function index(IndexUserRubricRequest $request, User $user, RubricFilter $filter)
     {
         $rubrics = $user->rubrics()
             ->filter($filter)
