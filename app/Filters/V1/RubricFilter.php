@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Filters;
+namespace App\Filters\V1;
 
+use App\Filters\AbstractFilter;
+use App\Filters\FilterMethod;
 use Illuminate\Database\Eloquent\Builder;
 
 class RubricFilter extends AbstractFilter

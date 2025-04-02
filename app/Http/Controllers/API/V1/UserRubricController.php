@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\API\V1;
 
-use App\Filters\RubricFilter;
+use App\Filters\V1\RubricFilter;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\V1\IndexUserRubricRequest;
 use App\Http\Resources\RubricResource;

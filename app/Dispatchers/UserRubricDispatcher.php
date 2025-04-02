@@ -3,11 +3,11 @@
 namespace App\Dispatchers;
 
 use App\Dispatchers\Contracts\Dispatcher;
-use App\Filters\RubricFilter;
-use App\Http\Requests\Api\V1\IndexUserRubricRequest;
+use App\Helpers\ResponseHelper;
 use App\Models\Rubric;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class UserRubricDispatcher extends Dispatcher
 {
@@ -18,9 +18,11 @@ class UserRubricDispatcher extends Dispatcher
      * @return mixed
      * @throws \Exception
      */
-    public function index(IndexUserRubricRequest $request, User $user, RubricFilter $filter): mixed
+    public function index(User $user): mixed
     {
-        return $this->run('index', $request, $user, $filter);
+        $callable = $this->getCallable('index');
+
+        return ResponseHelper::getResponse(...App::call($callable, ['user' => $user]));
     }
 
     /**
@@ -31,9 +33,14 @@ class UserRubricDispatcher extends Dispatcher
      * @return mixed
      * @throws \Exception
      */
-    public function store(Request $request, User $user, Rubric $rubric): mixed
+    public function store(User $user, Rubric $rubric): mixed
     {
-        return $this->run('store', $request, $user, $rubric);
+        $callable =  $this->getCallable('store');
+
+        return ResponseHelper::getResponse(...App::call($callable, [
+            'user' => $user,
+            'rubric' => $rubric
+        ]));
     }
 
     /**
@@ -44,9 +51,14 @@ class UserRubricDispatcher extends Dispatcher
      * @return mixed
      * @throws \Exception
      */
-    public function destroy(Request $request, User $user, Rubric $rubric): mixed
+    public function destroy(User $user, Rubric $rubric): mixed
     {
-        return $this->run('destroy', $request, $user, $rubric);
+        $callable =  $this->getCallable('destroy');
+
+        return ResponseHelper::getResponse(...App::call($callable, [
+            'user' => $user,
+            'rubric' => $rubric
+        ]));
     }
 
     /**
@@ -56,8 +68,10 @@ class UserRubricDispatcher extends Dispatcher
      * @return mixed
      * @throws \Exception
      */
-    public function destroyAll(Request $request, User $user): mixed
+    public function destroyAll(User $user): mixed
     {
-        return $this->run('destroyAll', $request, $user);
+        $callable =  $this->getCallable('destroyAll');
+
+        return ResponseHelper::getResponse(...App::call($callable, ['user' => $user]));
     }
 }

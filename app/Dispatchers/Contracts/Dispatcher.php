@@ -16,9 +16,9 @@ abstract class Dispatcher
         $this->versions = config('api_dispatcher')[static::class];
     }
 
-    protected function run($method, Request $request, ...$args): mixed
+    protected function getCallable(string $method): callable
     {
-        $apiVersion = $request->header('api-version');
+        $apiVersion = request()->header('api-version');
 
         // если не указана версия в заголовке
         if(!$apiVersion) {
@@ -59,6 +59,6 @@ abstract class Dispatcher
             $controllerInstance = app($this->versions[$previousVersion]['controller']);;
         }
 
-        return ResponseHelper::getResponse(...call_user_func([$controllerInstance, $method], $request, ...$args));
+        return [$controllerInstance, $method];
     }
 }
