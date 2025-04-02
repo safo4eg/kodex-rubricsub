@@ -26,4 +26,16 @@ class UserRubricService
             throw $e;
         }
     }
+
+    public function destroyWithUuid(string $uuid): void
+    {
+        DB::beginTransaction();
+        try {
+            UserRubric::where('uuid', $uuid)->delete();
+            DB::commit();
+        } catch (\Throwable $e) {
+            DB::rollBack();
+            throw $e;
+        }
+    }
 }

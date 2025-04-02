@@ -74,4 +74,21 @@ class UserRubricDispatcher extends Dispatcher
 
         return ResponseHelper::getResponse(...App::call($callable, ['user' => $user]));
     }
+
+    /**
+     * Удаление подписки по uuid
+     * @param Request $request
+     * @param User $user
+     * @return mixed
+     * @throws \Exception
+     */
+    public function destroyWithUuid(User $user, string $uuid): mixed
+    {
+        $callable =  $this->getCallable('destroyWithUuid');
+
+        return ResponseHelper::getResponse(...App::call($callable, [
+            'user' => $user,
+            'uuid' => $uuid
+        ]));
+    }
 }

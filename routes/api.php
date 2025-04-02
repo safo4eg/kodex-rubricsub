@@ -21,5 +21,6 @@ Route::middleware('auth:api')->group(function () {
 
         // работа с пользователями
         Route::get('/users', [UserDispatcher::class, 'index']);
+        Route::delete('/users/{user}/rubrics/uuid/{uuid}', [UserRubricDispatcher::class, 'destroyWithUuid']);
     });
 });
