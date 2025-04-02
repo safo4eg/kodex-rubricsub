@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API\V1;
 
+use App\Filters\RubricFilter;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\RubricResource;
 use App\Http\Resources\UserRubricResource;
@@ -28,9 +29,11 @@ class UserRubricController extends Controller
      * @return void
      * @throws \Throwable
      */
-    public function index(Request $request, User $user)
+    public function index(Request $request, User $user, RubricFilter $filter)
     {
-        $rubrics = $user->rubrics()->get();
+        $rubrics = $user->rubrics()
+            ->filter($filter)
+            ->get();
 
         $responseData = [
             'success' => true,

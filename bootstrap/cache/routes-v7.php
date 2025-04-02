@@ -234,7 +234,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::G6jLHpcGT2oxQqAN',
+            '_route' => 'generated::NbjGyYFaZFig8zVu',
           ),
           1 => NULL,
           2 => 
@@ -254,7 +254,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::HQps31TfHmbVXvvN',
+            '_route' => 'generated::g0iJsSvg18es0QmW',
           ),
           1 => NULL,
           2 => 
@@ -386,7 +386,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'users.rubrics.generated::UGlJg0y3YYpQxPUJ',
+            '_route' => 'users.rubrics.generated::5U1jsoAFGOd41svt',
           ),
           1 => 
           array (
@@ -409,7 +409,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'users.rubrics.generated::BTiES7ESNMvMaCfP',
+            '_route' => 'users.rubrics.generated::FMcN5FKlSpAIz0bj',
           ),
           1 => 
           array (
@@ -428,7 +428,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'users.rubrics.generated::kv3Xea98pVVHJ2QX',
+            '_route' => 'users.rubrics.generated::I9H0yIbLR8wJEMYl',
           ),
           1 => 
           array (
@@ -1108,7 +1108,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'users.rubrics.generated::UGlJg0y3YYpQxPUJ' => 
+    'users.rubrics.generated::5U1jsoAFGOd41svt' => 
     array (
       'methods' => 
       array (
@@ -1124,7 +1124,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'App\\Dispatchers\\UserRubricDispatcher@destroy',
         'controller' => 'App\\Dispatchers\\UserRubricDispatcher@destroy',
-        'as' => 'users.rubrics.generated::UGlJg0y3YYpQxPUJ',
+        'as' => 'users.rubrics.generated::5U1jsoAFGOd41svt',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
@@ -1145,7 +1145,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'users.rubrics.generated::BTiES7ESNMvMaCfP' => 
+    'users.rubrics.generated::FMcN5FKlSpAIz0bj' => 
     array (
       'methods' => 
       array (
@@ -1161,7 +1161,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'App\\Dispatchers\\UserRubricDispatcher@destroyAll',
         'controller' => 'App\\Dispatchers\\UserRubricDispatcher@destroyAll',
-        'as' => 'users.rubrics.generated::BTiES7ESNMvMaCfP',
+        'as' => 'users.rubrics.generated::FMcN5FKlSpAIz0bj',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
@@ -1182,7 +1182,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'users.rubrics.generated::kv3Xea98pVVHJ2QX' => 
+    'users.rubrics.generated::I9H0yIbLR8wJEMYl' => 
     array (
       'methods' => 
       array (
@@ -1199,7 +1199,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'App\\Dispatchers\\UserRubricDispatcher@index',
         'controller' => 'App\\Dispatchers\\UserRubricDispatcher@index',
-        'as' => 'users.rubrics.generated::kv3Xea98pVVHJ2QX',
+        'as' => 'users.rubrics.generated::I9H0yIbLR8wJEMYl',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
@@ -1220,7 +1220,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::G6jLHpcGT2oxQqAN' => 
+    'generated::NbjGyYFaZFig8zVu' => 
     array (
       'methods' => 
       array (
@@ -1248,8 +1248,8 @@ app('router')->setCompiledRoutes(
                     return response(\\Illuminate\\Support\\Facades\\View::file(\'/var/www/vendor/laravel/framework/src/Illuminate/Foundation/Configuration\'.\'/../resources/health-up.blade.php\', [
                         \'exception\' => $exception,
                     ]), status: $exception ? 500 : 200);
-                }";s:5:"scope";s:54:"Illuminate\\Foundation\\Configuration\\ApplicationBuilder";s:4:"this";N;s:4:"self";s:32:"00000000000004f10000000000000000";}}',
-        'as' => 'generated::G6jLHpcGT2oxQqAN',
+                }";s:5:"scope";s:54:"Illuminate\\Foundation\\Configuration\\ApplicationBuilder";s:4:"this";N;s:4:"self";s:32:"00000000000004f40000000000000000";}}',
+        'as' => 'generated::NbjGyYFaZFig8zVu',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1265,7 +1265,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::HQps31TfHmbVXvvN' => 
+    'generated::g0iJsSvg18es0QmW' => 
     array (
       'methods' => 
       array (
@@ -1281,13 +1281,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:55:"Laravel\\SerializableClosure\\UnsignedSerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:44:"function () {
     return \\view(\'welcome\');
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000004f60000000000000000";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000004f90000000000000000";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'generated::HQps31TfHmbVXvvN',
+        'as' => 'generated::g0iJsSvg18es0QmW',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1319,7 +1319,7 @@ app('router')->setCompiledRoutes(
                         $config,
                         $isProduction
                     ))($request, $path);
-                }";s:5:"scope";s:47:"Illuminate\\Filesystem\\FilesystemServiceProvider";s:4:"this";N;s:4:"self";s:32:"00000000000004fc0000000000000000";}}',
+                }";s:5:"scope";s:47:"Illuminate\\Filesystem\\FilesystemServiceProvider";s:4:"this";N;s:4:"self";s:32:"00000000000004ff0000000000000000";}}',
         'as' => 'storage.local',
       ),
       'fallback' => false,

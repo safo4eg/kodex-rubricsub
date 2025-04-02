@@ -3,6 +3,7 @@
 namespace App\Dispatchers;
 
 use App\Dispatchers\Contracts\Dispatcher;
+use App\Filters\RubricFilter;
 use App\Models\Rubric;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -16,9 +17,9 @@ class UserRubricDispatcher extends Dispatcher
      * @return mixed
      * @throws \Exception
      */
-    public function index(Request $request, User $user): mixed
+    public function index(Request $request, User $user, RubricFilter $filter): mixed
     {
-        return $this->run('index', $request, $user);
+        return $this->run('index', $request, $user, $filter);
     }
 
     /**
