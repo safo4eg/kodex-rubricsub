@@ -25,6 +25,10 @@ return [
         'v1' => [
             'controller' => V1\UserController::class,
             'unsupported_methods' => [],
+        ],
+        'v2' => [
+            'controller' => V2\UserController::class,
+            'unsupported_methods' => [],
         ]
     ]
 ];
