@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API\V1;
+namespace App\Http\Controllers\Api\V1;
 
 use App\Filters\Api\V1\RubricFilter;
 use App\Http\Controllers\Controller;
@@ -10,7 +10,7 @@ use App\Http\Resources\UserRubricResource;
 use App\Models\Rubric;
 use App\Models\User;
 use App\Models\UserRubric;
-use App\Services\API\V1\UserRubricService;
+use App\Services\Api\V1\UserRubricService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 

@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Services\API\V1;
+namespace App\Services\Api\V1;
+
 use App\Models\Rubric;
 use App\Models\User;
 use App\Models\UserRubric;

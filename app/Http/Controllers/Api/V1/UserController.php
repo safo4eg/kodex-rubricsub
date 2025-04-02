@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API\V1;
+namespace App\Http\Controllers\Api\V1;
 
 use App\Filters\Api\V1\UserFilter;
 use App\Http\Controllers\Controller;
