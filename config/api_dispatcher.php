@@ -1,6 +1,6 @@
 <?php
-use \App\Http\Controllers\API\V1;
-use \App\Http\Controllers\API\V2;
+use \App\Http\Controllers\Api\V1;
+use \App\Http\Controllers\Api\V2;
 
 /**
  * Сопостовление версий с кнотроллерами

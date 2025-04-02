@@ -234,7 +234,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'users.rubrics.generated::J4XTnifoD9kYFsNj',
+            '_route' => 'users.rubrics.generated::SiSffoW8uqu3BP7H',
           ),
           1 => NULL,
           2 => 
@@ -254,7 +254,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::a5HY7jb835LZBA45',
+            '_route' => 'generated::opwsjeGefwilWKcW',
           ),
           1 => NULL,
           2 => 
@@ -274,7 +274,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::qkzuKLXOxA3LHUzf',
+            '_route' => 'generated::enP8IK840lH9ETGT',
           ),
           1 => NULL,
           2 => 
@@ -406,7 +406,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'users.rubrics.generated::E70Hmum0m7i81NVH',
+            '_route' => 'users.rubrics.generated::vElPQeR7lwsKuLvj',
           ),
           1 => 
           array (
@@ -429,7 +429,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'users.rubrics.generated::IjF7GJPyt6JXz5Lu',
+            '_route' => 'users.rubrics.generated::5H0cKGaia3x8InAS',
           ),
           1 => 
           array (
@@ -448,7 +448,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'users.rubrics.generated::NYIny4G3ZQSGPToH',
+            '_route' => 'users.rubrics.generated::uRARh6h5DauhwIhq',
           ),
           1 => 
           array (
@@ -1128,7 +1128,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'users.rubrics.generated::E70Hmum0m7i81NVH' => 
+    'users.rubrics.generated::vElPQeR7lwsKuLvj' => 
     array (
       'methods' => 
       array (
@@ -1144,7 +1144,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'App\\Dispatchers\\UserRubricDispatcher@destroy',
         'controller' => 'App\\Dispatchers\\UserRubricDispatcher@destroy',
-        'as' => 'users.rubrics.generated::E70Hmum0m7i81NVH',
+        'as' => 'users.rubrics.generated::vElPQeR7lwsKuLvj',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
@@ -1165,7 +1165,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'users.rubrics.generated::IjF7GJPyt6JXz5Lu' => 
+    'users.rubrics.generated::5H0cKGaia3x8InAS' => 
     array (
       'methods' => 
       array (
@@ -1181,7 +1181,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'App\\Dispatchers\\UserRubricDispatcher@destroyAll',
         'controller' => 'App\\Dispatchers\\UserRubricDispatcher@destroyAll',
-        'as' => 'users.rubrics.generated::IjF7GJPyt6JXz5Lu',
+        'as' => 'users.rubrics.generated::5H0cKGaia3x8InAS',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
@@ -1202,7 +1202,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'users.rubrics.generated::NYIny4G3ZQSGPToH' => 
+    'users.rubrics.generated::uRARh6h5DauhwIhq' => 
     array (
       'methods' => 
       array (
@@ -1219,7 +1219,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'App\\Dispatchers\\UserRubricDispatcher@index',
         'controller' => 'App\\Dispatchers\\UserRubricDispatcher@index',
-        'as' => 'users.rubrics.generated::NYIny4G3ZQSGPToH',
+        'as' => 'users.rubrics.generated::uRARh6h5DauhwIhq',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
@@ -1240,7 +1240,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'users.rubrics.generated::J4XTnifoD9kYFsNj' => 
+    'users.rubrics.generated::SiSffoW8uqu3BP7H' => 
     array (
       'methods' => 
       array (
@@ -1257,7 +1257,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'App\\Dispatchers\\UserDispatcher@index',
         'controller' => 'App\\Dispatchers\\UserDispatcher@index',
-        'as' => 'users.rubrics.generated::J4XTnifoD9kYFsNj',
+        'as' => 'users.rubrics.generated::SiSffoW8uqu3BP7H',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
@@ -1278,7 +1278,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::a5HY7jb835LZBA45' => 
+    'generated::opwsjeGefwilWKcW' => 
     array (
       'methods' => 
       array (
@@ -1307,7 +1307,7 @@ app('router')->setCompiledRoutes(
                         \'exception\' => $exception,
                     ]), status: $exception ? 500 : 200);
                 }";s:5:"scope";s:54:"Illuminate\\Foundation\\Configuration\\ApplicationBuilder";s:4:"this";N;s:4:"self";s:32:"00000000000004f70000000000000000";}}',
-        'as' => 'generated::a5HY7jb835LZBA45',
+        'as' => 'generated::opwsjeGefwilWKcW',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1323,7 +1323,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::qkzuKLXOxA3LHUzf' => 
+    'generated::enP8IK840lH9ETGT' => 
     array (
       'methods' => 
       array (
@@ -1345,7 +1345,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::qkzuKLXOxA3LHUzf',
+        'as' => 'generated::enP8IK840lH9ETGT',
       ),
       'fallback' => false,
       'defaults' => 
